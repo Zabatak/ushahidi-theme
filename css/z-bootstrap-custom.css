@@ -24,25 +24,33 @@ div#header{
 }
 
 #container {
-width: 940px;
-margin: 30px auto;
-padding: 30px;
-background: white;
--webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
--moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+	width: 940px;
+	margin: 30px auto;
+	padding: 30px;
+	background: white;
+	-webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 div.language-box select{
-width: inherit !important;
-margin: inherit !important;
-padding: inherit !important;
-font-size: inherit !important;
-color: inherit !important;
+	width: inherit !important;
+	margin: inherit !important;
+	padding: inherit !important;
+	font-size: inherit !important;
+	color: inherit !important;
 }
 
 div.language-box {
-padding: 0px;
-margin: inherit !important;
-float: inherit !important;;
+	padding: 0px;
+	margin: inherit !important;
+	float: inherit !important;;
+}
+
+div.submit-incident{
+	width: inherit !important;
+}
+
+div.submit-incident2{
+	float: right;
 }

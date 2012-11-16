@@ -96,9 +96,13 @@ elseif (count($uri_segments) >= 2)
           </div>
       </div>
 
-      <!-- submit incident -->
-    <?php echo $submit_btn; ?>
-    <!-- / submit incident -->
+      <div class="row">
+        <div class="span6">
+        <!-- submit incident -->
+        <?php echo $submit_btn; ?>
+        <!-- / submit incident -->
+        </div>
+      </div>
 
     </div>
   </div>
@@ -134,14 +138,4 @@ Event::run('ushahidi_action.header_item');
 
 <!-- main body -->
 
-<!--
-
-</div>
-</div>
-
-
-
-<div id="middle">
-<div class="background layoutleft">
--->
 
