@@ -1,0 +1,48 @@
+.dropdown-login-form{
+	padding: 15px; padding-bottom: 0px;
+}
+
+.dropdown-login-form .btn {
+	width:100%;
+}
+
+body {
+	padding-top: 0px !important;  /* 60px to make the container go all the way to the bottom of the topbar */
+	font-family: Arial, Helvetica, sans-serif;
+	color: inherit !important;
+	font-size: 12px;
+	background: url('http://subtlepatterns.com/patterns/wood_pattern.png') !important;
+}
+
+
+div.submit-incident {margin:inherit !important; position: inherit !important;}
+div#header{
+	position: inherit !important;
+	height: inherit !important;
+	margin: auto !important;
+	padding-bottom: 10px;
+}
+
+#container {
+width: 940px;
+margin: 30px auto;
+padding: 30px;
+background: white;
+-webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+-moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+div.language-box select{
+width: inherit !important;
+margin: inherit !important;
+padding: inherit !important;
+font-size: inherit !important;
+color: inherit !important;
+}
+
+div.language-box {
+padding: 0px;
+margin: inherit !important;
+float: inherit !important;;
+}
