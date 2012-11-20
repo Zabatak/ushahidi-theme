@@ -41,11 +41,13 @@ div.language-box select{
 	color: inherit !important;
 }
 
-div.language-box {
+div.language-box{
 	padding: 0px;
-	margin: inherit !important;
+	margin: 0px !important;
 	float: inherit !important;;
 }
+
+div.language-box form{ margin: 0px;}
 
 div.submit-incident{
 	width: inherit !important;
@@ -53,4 +55,69 @@ div.submit-incident{
 
 div.submit-incident2{
 	float: right;
+	margin-right: 10px;
 }
+
+div.map {
+	width: auto;
+	border: 1px solid #E3E3E3;
+}
+
+#category-btn{
+	position: relative;
+	top: 20px;
+	z-index: 100;
+	left: 50px;
+}
+
+
+#howtoreport-btn{
+	position: relative;
+	top: 20px;
+	z-index: 100;
+	left: 620px;
+}
+
+
+#mapStatus{
+	width: inherit !important;
+	background-color: #404040;
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+#mapStatus div{
+	padding:inherit !important;
+}
+
+#map{
+	height: 250px;
+}
+
+div#footer {
+width: auto;
+clear: both;
+color: white;
+background-color: #fff;
+padding-bottom: 20px;
+}
+
+div.footermenu ul li a {
+color: #08C !important;
+border-left: #FFFDCC 1px solid;
+padding: 0 10px;
+text-decoration: underline;
+}
+
+.filter-list{
+	margin: 0 0 10px 0px;
+}
+
+.report-list-bar .pagination, .report-list-bar .nav, .report-list-bar .report-list-toggle {
+	margin: 0px;
+}
+
+.report-list-bar  hr{
+	margin: 10px 0px;
+}
+
