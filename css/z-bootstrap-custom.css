@@ -121,3 +121,7 @@ text-decoration: underline;
 	margin: 10px 0px;
 }
 
+.time select{
+	width: 60px;
+}
+
