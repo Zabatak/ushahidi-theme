@@ -223,12 +223,13 @@
 		</div>
 	</div>
 
-
-
-
-
-
 </div>
+<div >
+	<p>
+		<a href="#" class="small-link-button btn btn-warning btn-small " id="reset_all_filters"><i class="icon-remove-circle icon-white"></i> <?php echo Kohana::lang('ui_main.reset_all_filters'); ?></a> 
+		<a href="#" id="applyFilters" class="btn btn-primary btn-small pull-right"><i class="icon-filter icon-white"></i> <?php echo Kohana::lang('ui_main.filter_reports'); ?></a>
+	</p>
+</div> 
 
 </div>
 </div>

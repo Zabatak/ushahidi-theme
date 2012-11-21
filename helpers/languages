@@ -1,9 +1,0 @@
-<?php
-
-class languages_Core {
-
-	public static function languages(){
-		return "abbas";
-	}
-
-}
