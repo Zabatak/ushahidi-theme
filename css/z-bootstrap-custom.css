@@ -125,3 +125,7 @@ text-decoration: underline;
 	width: 60px;
 }
 
+body .label{
+	display: inline-block;
+}
+
