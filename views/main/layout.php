@@ -1,15 +1,15 @@
 <!-- main body -->
+
 <div class="row">
 	<div class="span12">
-
 		<?php if ($site_message != ''): ?>
-
 		<div class="alert alert-success">
 			<?php echo $site_message; ?>
 		</div>
-	<?php endif; ?>
+		<?php endif; ?>
 
 	<div style="height:0px">
+
 		<!-- categories -->
 		<div class="btn-group " id="category-btn">
 			<a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
@@ -119,64 +119,88 @@
 			<ul class="additional-content dropdown-menu" >
 
 				<!-- Phone -->
-				<?php if ( ! empty($phone_array)): ?>
+			<?php if ( ! empty($phone_array)): ?>
 				<li class="disabled"><a><?php echo Kohana::lang('ui_main.report_option_1'); ?></a></li>
 				<?php foreach ($phone_array as $phone): ?>
-				<li><?php echo $phone; ?></li>
-			<?php endforeach; ?>
-			<li class="divider"></li>
+					<li><?php echo $phone; ?></li>
+				<?php endforeach; ?>
+				<li class="divider"></li>
+			<?php endif; ?>
 
-		<?php endif; ?>
+			<!-- External Apps -->
+			<?php if (count($external_apps) > 0): ?>
+				<li class="disabled"> 
+					<a><?php echo Kohana::lang('ui_main.report_option_external_apps'); ?>:</a>
+				</li>
+				<?php foreach ($external_apps as $app): ?>
+					<li><a href="<?php echo $app->url; ?>"><?php echo $app->name; ?></a></li>
+				<?php endforeach; ?>
+				<li class="divider"></li>
+			<?php endif; ?>
 
-		<!-- External Apps -->
-		<?php if (count($external_apps) > 0): ?>
-		<li class="disabled"> 
-			<a><?php echo Kohana::lang('ui_main.report_option_external_apps'); ?>:</a>
-		</li>
-		<?php foreach ($external_apps as $app): ?>
-		<li><a href="<?php echo $app->url; ?>"><?php echo $app->name; ?></a></li>
-	<?php endforeach; ?>
-	<li class="divider"></li>
-<?php endif; ?>
+				<!-- Email -->
+				<?php if ( ! empty($report_email)): ?>
+					<li class="disabled"><a><?php echo Kohana::lang('ui_main.report_option_2'); ?>:</a></li>
+					<a href="mailto:<?php echo $report_email?>"><?php echo $report_email?></a>
+				</li>
+				<li class="divider"></li>
+				<?php endif; ?>
 
-<!-- Email -->
-<?php if ( ! empty($report_email)): ?>
-	<li class="disabled"><a><?php echo Kohana::lang('ui_main.report_option_2'); ?>:</a></li>
-	<a href="mailto:<?php echo $report_email?>"><?php echo $report_email?></a>
-</li>
-<li class="divider"></li>
-<?php endif; ?>
+				<!-- Twitter -->
+				<?php if ( ! empty($twitter_hashtag_array)): ?>
+					<li class="disabled"><a><?php echo Kohana::lang('ui_main.report_option_3'); ?>:</a>
+						<?php foreach ($twitter_hashtag_array as $twitter_hashtag): ?>
+						<li>#<?php echo $twitter_hashtag; ?></li>
+						<?php if ($twitter_hashtag != end($twitter_hashtag_array)): ?>
+					<?php endif; ?>
+				<?php endforeach; ?>
+				<li class="divider"></li>
+				<?php endif; ?>
 
-<!-- Twitter -->
-<?php if ( ! empty($twitter_hashtag_array)): ?>
-	<li class="disabled"><a><?php echo Kohana::lang('ui_main.report_option_3'); ?>:</a>
-		<?php foreach ($twitter_hashtag_array as $twitter_hashtag): ?>
-		<li>#<?php echo $twitter_hashtag; ?></li>
-		<?php if ($twitter_hashtag != end($twitter_hashtag_array)): ?>
-	<?php endif; ?>
-<?php endforeach; ?>
-<li class="divider"></li>
-<?php endif; ?>
+				<!-- Web Form -->
+				<li>
+					<a href="<?php echo url::site().'reports/submit/'; ?>">
+						<?php echo Kohana::lang('ui_main.report_option_4'); ?>
+					</a>
+				</li>
 
-<!-- Web Form -->
-<li>
-	<a href="<?php echo url::site().'reports/submit/'; ?>">
-		<?php echo Kohana::lang('ui_main.report_option_4'); ?>
-	</a>
-</li>
+			</ul>
+		</div>
 
-</ul>
+<!-- filters -->
+<div class="filters clearfix" style="position:relative; ">
+	<div>
+		<strong><?php echo Kohana::lang('ui_main.filters'); ?></strong>
+		<ul>
+			<li><a id="media_0" class="active  href="#" title="<?php echo Kohana::lang('ui_main.all'); ?>"><i class="icon-asterisk""></i></a></li>
+			<li><a id="media_4" href="#"  title="<?php echo Kohana::lang('ui_main.news'); ?>"><i class="icon-bullhorn"></i></a></li>
+			<li><a id="media_1" href="#"  title="<?php echo Kohana::lang('ui_main.pictures'); ?>"><i class="icon-picture"></i></a></li>
+			<li><a id="media_2" href="#"  title="<?php echo Kohana::lang('ui_main.video'); ?>"><i class="icon-film"></i></a></li>
+		</ul>
+	</div>
+
+
+	<?php
+					// Action::main_filters - Add items to the main_filters
+	Event::run('ushahidi_action.map_main_filters');
+	?>
 </div>
-</div>
+<!-- / filters -->
+
+	</div>
+
 <!-- / additional content -->
 <?php endif; ?>
 <?php
 		// Map and Timeline Blocks
 echo $div_map;
-		//echo $div_timeline;
+		
 ?>
+<div style="display:none"><?php echo $div_timeline; ?></div>
+
 </div>
 </div>
+
 
 
 <!-- content -->
