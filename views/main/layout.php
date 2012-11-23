@@ -168,15 +168,15 @@
 		</div>
 
 <!-- filters -->
-<div class="filters clearfix" style="position:relative; ">
+<div class="filters clearfix">
 	<div>
-		<strong><?php echo Kohana::lang('ui_main.filters'); ?></strong>
-		<ul>
-			<li><a id="media_0" class="active  href="#" title="<?php echo Kohana::lang('ui_main.all'); ?>"><i class="icon-asterisk""></i></a></li>
-			<li><a id="media_4" href="#"  title="<?php echo Kohana::lang('ui_main.news'); ?>"><i class="icon-bullhorn"></i></a></li>
-			<li><a id="media_1" href="#"  title="<?php echo Kohana::lang('ui_main.pictures'); ?>"><i class="icon-picture"></i></a></li>
-			<li><a id="media_2" href="#"  title="<?php echo Kohana::lang('ui_main.video'); ?>"><i class="icon-film"></i></a></li>
-		</ul>
+		<!--strong><?php echo Kohana::lang('ui_main.filters'); ?></strong-->
+		<div class="btn-group btn-group-vertical">
+			<a id="media_0" class=" btn active  href="#" title="<?php echo Kohana::lang('ui_main.all'); ?>"><i class="icon-asterisk""></i></a>
+			<a id="media_4" href="#" class="btn" title="<?php echo Kohana::lang('ui_main.news'); ?>"><i class="icon-bullhorn"></i></a>
+			<a id="media_1" href="#" class="btn" title="<?php echo Kohana::lang('ui_main.pictures'); ?>"><i class="icon-picture"></i></a>
+			<a id="media_2" href="#" class="btn" title="<?php echo Kohana::lang('ui_main.video'); ?>"><i class="icon-film"></i></a>
+		</div>
 	</div>
 
 
