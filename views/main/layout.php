@@ -167,6 +167,21 @@
 			</ul>
 		</div>
 
+		<!-- Checkins -->
+			<?php if (Kohana::config('settings.checkins')): ?>
+			<br/>
+			<div class="additional-content">
+				<h5><?php echo Kohana::lang('ui_admin.checkins'); ?></h5>
+				<div id="cilist"></div>
+			</div>
+			<?php endif; ?>
+			<!-- /Checkins -->
+			
+			<?php
+			// Action::main_sidebar - Add Items to the Entry Page Sidebar
+			Event::run('ushahidi_action.main_sidebar');
+			?>
+
 <!-- filters -->
 <div class="filters clearfix">
 	<div>
@@ -190,14 +205,18 @@
 	</div>
 
 <!-- / additional content -->
+
+
+
 <?php endif; ?>
+<div id="content">
 <?php
 		// Map and Timeline Blocks
 echo $div_map;
 		
 ?>
 <div style="display:none"><?php echo $div_timeline; ?></div>
-
+</div>
 </div>
 </div>
 

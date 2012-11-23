@@ -139,12 +139,14 @@ body div.filters{
 	z-index: 120;
 	position: relative;
 	left: 10px;
+	width: 0px;
 }
 
 
 body div.filters a{
 width: 20px;
 padding: 2px 5px;
+
 }
 
 #ushahidi-logo{
