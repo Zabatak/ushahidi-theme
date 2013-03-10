@@ -6,8 +6,8 @@
 			
 			<?php if ($form_error): ?>
 			<!-- red-box -->
-			<div class="red-box">
-				<h3>Error!</h3>
+			<div class="span11 alert  alert-error alert-block well ">
+				<b>Error!</b>
 				<ul>
 				<?php
 					foreach ($errors as $error_item => $error_description)
@@ -20,7 +20,7 @@
 			</div>
 			<?php endif; ?>
 			<?php print form::open() ?>
-			<div class="step1 span6 ">
+			<div class="step-1 span6 ">
 				<h4><?php echo Kohana::lang('ui_main.alerts_step1_select_city'); ?></h4>
 				<?php echo $alert_radius_view; ?>
 			</div>
@@ -29,7 +29,7 @@
 			<input type="hidden" id="alert_country" name="alert_country" value="<?php echo $form['alert_country']; ?>" />
 			<input type="hidden" id="alert_confirmed" name="alert_confirmed" value="<?php echo $form['alert_confirmed']; ?>" />
 			<div class="step-2-holder span6">
-				<div class="step2">
+				<div class="step-2">
 					<h4><?php echo Kohana::lang('ui_main.alerts_step2_send_alerts'); ?></h4>
 					<div class="holder">
 						<?php if ($show_mobile == TRUE): ?>
@@ -47,7 +47,7 @@
 						<?php endif; ?>
 						<div class="box">
 							<label>
-								<?php $checked = ($form['alert_email_yes'] == 1) ?> 
+								<?php $checked = ($form['alert_email_yes'] == 1) ?>
 								<?php print form::checkbox('alert_email_yes', '1', $checked); ?>
 								<span>
 									<strong><?php echo Kohana::lang('ui_main.alerts_email'); ?></strong><br />
@@ -63,12 +63,12 @@
 					<div class="holder">
 						<div class="box">
 							<div class="report_category" id="categories">
-							<?php 
+							<?php
 								$selected_categories = (!empty($form['alert_category']) AND is_array($form['alert_category']))
 									? $selected_categories = $form['alert_category']
 									: array();
-									
-									
+
+
 								echo category::form_tree('alert_category', $selected_categories, 2, TRUE, FALSE);
 							?>
 							</div>

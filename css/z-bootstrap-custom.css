@@ -1,154 +1,179 @@
 .dropdown-login-form{
-	padding: 15px; padding-bottom: 0px;
+    padding: 15px; padding-bottom: 0px;
 }
 
 .dropdown-login-form .btn {
-	width:100%;
+    width:100%;
 }
 
 body {
-	padding-top: 0px !important;  /* 60px to make the container go all the way to the bottom of the topbar */
-	font-family: Arial, Helvetica, sans-serif;
-	color: inherit !important;
-	font-size: 12px;
-	background: url('http://subtlepatterns.com/patterns/wood_pattern.png') !important;
+    padding-top: 0px !important;  /* 60px to make the container go all the way to the bottom of the topbar */
+    font-family: Arial, Helvetica, sans-serif;
+    color: inherit !important;
+    font-size: 12px;
+    background: url('http://subtlepatterns.com/patterns/wood_pattern.png') !important;
 }
 
 
 div.submit-incident {margin:inherit !important; position: inherit !important;}
 div#header{
-	position: inherit !important;
-	height: inherit !important;
-	margin: auto !important;
-	padding-bottom: 10px;
+    position: inherit !important;
+    height: inherit !important;
+    margin: auto !important;
+    padding-bottom: 10px;
 }
 
 #container {
-	width: 940px;
-	margin: 30px auto;
-	padding: 30px;
-	background: white;
-	-webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
-	-moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
-	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 940px;
+    /*margin: 30px auto;*/
+    padding: 30px;
+    background: white;
+    -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 div.language-box select{
-	width: inherit !important;
-	margin: inherit !important;
-	padding: inherit !important;
-	font-size: inherit !important;
-	color: inherit !important;
+    width: inherit !important;
+    margin: inherit !important;
+    padding: inherit !important;
+    font-size: inherit !important;
+    color: inherit !important;
 }
 
 div.language-box{
-	padding: 0px;
-	margin: 0px !important;
-	float: inherit !important;;
+    padding: 0px;
+    margin: 0px !important;
+    float: inherit !important;;
 }
 
 div.language-box form{ margin: 0px;}
 
 div.submit-incident{
-	width: inherit !important;
+    width: inherit !important;
 }
 
 div.submit-incident2{
-	float: right;
-	margin-right: 10px;
+    float: right;
+    margin-right: 10px;
 }
 
 div.map {
-	width: auto;
-	border: 1px solid #E3E3E3;
+    width: auto;
+    border: 1px solid #E3E3E3;
 }
 
 #category-btn{
-	position: relative;
-	top: 20px;
-	z-index: 100;
-	left: 50px;
+    position: relative;
+    top: 20px;
+    z-index: 100;
+    left: 50px;
 }
 
 
 #howtoreport-btn{
-	position: relative;
-	top: 20px;
-	z-index: 100;
-	left: 620px;
+    position: relative;
+    top: 20px;
+    z-index: 100;
+    left: 620px;
 }
 
 
 #mapStatus{
-	width: inherit !important;
-	background-color: #404040;
-	color: #fff;
-	margin-bottom: 10px;
+    width: inherit !important;
+    background-color: #404040;
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 #mapStatus div{
-	padding:inherit !important;
+    padding:inherit !important;
 }
 
 #map{
-	height: 250px;
+    height: 250px;
 }
 
 div#footer {
-width: auto;
-clear: both;
-color: #333;
-background-color: #fff;
-padding-bottom: 20px;
+    width: auto;
+    clear: both;
+    color: #333;
+    background-color: #fff;
+    padding-bottom: 20px;
 }
 
 div.footermenu ul li a {
-color: #08C !important;
-border-left: #FFFDCC 1px solid;
-padding: 0 10px;
-text-decoration: underline;
+    color: #08C !important;
+    border-left: #FFFDCC 1px solid;
+    padding: 0 10px;
+    text-decoration: underline;
 }
 
 .filter-list{
-	margin: 0 0 10px 0px;
+    margin: 0 0 10px 0px;
 }
 
 .report-list-bar .pagination, .report-list-bar .nav, .report-list-bar .report-list-toggle {
-	margin: 0px;
+    margin: 0px;
 }
 
 .report-list-bar  hr{
-	margin: 10px 0px;
+    margin: 10px 0px;
 }
 
 .time select{
-	width: 60px;
+    width: 60px;
 }
 
 body .label{
-	display: inline-block;
+    display: inline-block;
 }
 
 body div.filters li {
-float: none;
-display: inline;
+    float: none;
+    display: inline;
 }
 body div.filters{
-	position: relative;
-	top: 30px;
-	z-index: 120;
-	position: relative;
-	left: 10px;
-	width: 0px;
+    position: relative;
+    top: 30px;
+    z-index: 120;
+    position: relative;
+    left: 10px;
+    width: 0px;
 }
 
 
 body div.filters a{
-width: 20px;
-padding: 2px 5px;
+    width: 20px;
+    padding: 2px 5px;
 
 }
 
 #ushahidi-logo{
-	width: 88px;
+    width: 88px;
+}
+
+
+.row .step-1 .map {
+    overflow:hidden;
+    width:95%;
+    padding:10px;
+    margin:10px 0 0 0;
+}
+.row .step-1 .map p {
+    margin:0;
+    padding:0 0 6px;
+}
+.row .step-1 .map .map-holder {
+    overflow:hidden;
+    width:100%;
+    height:325px;
+}
+
+.step-1 .alert_slider {
+    padding-bottom: 55px ;
+}
+
+.treeview li {
+    padding-top: 0px !important;
 }
