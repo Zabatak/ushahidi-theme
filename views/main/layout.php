@@ -141,8 +141,7 @@
 				<!-- Email -->
 				<?php if ( ! empty($report_email)): ?>
 					<li class="disabled"><a><?php echo Kohana::lang('ui_main.report_option_2'); ?>:</a></li>
-					<a href="mailto:<?php echo $report_email?>"><?php echo $report_email?></a>
-				</li>
+                                        <li><a href="mailto:<?php echo $report_email?>"><?php echo $report_email?></a></li>
 				<li class="divider"></li>
 				<?php endif; ?>
 

@@ -205,7 +205,7 @@
 							<div style="clear:both;"></div>
 							<?php print form::input('location_find', '', ' title="'.Kohana::lang('ui_main.location_example').'" class="findtext"'); ?>
 							<div style="float:left;margin:9px 0 0 5px;">
-								<input type="button" name="button" id="button" value="<?php echo Kohana::lang('ui_main.find_location'); ?>" class="btn_find  btn" />
+								<input type="button" name="button" id="button" value="<?php echo Kohana::lang('ui_main.find_location'); ?>" class="btn_find  btn btn-inverse" />
 							</div>
 							<div id="find_loading" class="report-find-loading"></div>
 							<div style="clear:both;" id="find_text"><?php echo Kohana::lang('ui_main.pinpoint_location'); ?>.</div>
