@@ -2,8 +2,8 @@
 	<div>
 
 		<?php if ($site_submit_report_message != ''): ?>
-			<div class="green-box" style="margin: 25px 25px 0px 25px">
-				<h3><?php echo $site_submit_report_message; ?></h3>
+			<div class="alert alert-success alert-block" >
+				<?php echo $site_submit_report_message; ?>
 			</div>
 		<?php endif; ?>
 
@@ -17,16 +17,16 @@
 			<h3><?php echo Kohana::lang('ui_main.reports_submit_new'); ?></h3>
 			<?php if ($form_error): ?>
 			<!-- red-box -->
-			<div class="red-box">
-				<h3>Error!</h3>
-				<ul>
-					<?php
-						foreach ($errors as $error_item => $error_description)
-						{
-							print (!$error_description) ? '' : "<li>" . $error_description . "</li>";
-						}
-					?>
-				</ul>
+			<div class="alert  alert-error alert-block lad">
+                            <strong>Error!</strong>
+                            <ul>
+                                    <?php
+                                            foreach ($errors as $error_item => $error_description)
+                                            {
+                                                    print (!$error_description) ? '' : "<li>" . $error_description . "</li>";
+                                            }
+                                    ?>
+                            </ul>
 			</div>
 			<?php endif; ?>
 			<div class="row">
