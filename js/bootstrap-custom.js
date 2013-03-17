@@ -22,6 +22,18 @@ $(document).ready( function() {
 		}
 		);
 	$('.mtooltip').tooltip();
+        
+        $('#bigmap').click(function(){
+            $('#map').addClass('tallmap',1000);
+            $(this).addClass('active');
+            $('#smallmap').removeClass('active');
+        });
+        
+        $('#smallmap').click(function(){
+            $('#map').removeClass('tallmap');
+            $(this).addClass('active');
+            $('#bigmap').removeClass('active');
+        });
 
 
 });
