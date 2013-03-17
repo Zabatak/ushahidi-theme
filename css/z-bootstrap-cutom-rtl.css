@@ -82,9 +82,6 @@ a.add, a.rem {
     float: right;
 }
 
-.report_category{
-    direction: ltr;
-}
 
 a.show-more {
     float: left;
@@ -113,7 +110,43 @@ a.show-more {
     float: right;
 }
 
-.navbar .nav > li > a{
-    font-size: 15px;
-    color: #333
+
+/** reort category */
+
+.report_category .treeview,.report_category  .treeview ul { 
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
+
+.report_category  .treeview ul {
+  background-color: white;
+  margin-top: 4px;
+}
+
+.report_category .treeview .hitarea {
+  background: url(../img/rtl-treeview-default-c.gif) 0 2px no-repeat;
+  height: 16px;
+  width: 16px;
+  margin-right: -16px;
+  float: right;
+  cursor: pointer;
+}
+
+.report_category  .treeview li { 
+  margin: 0;
+  padding: 0px 16px 2px 0px;
+}
+
+.report_category .treeview a.selected {background-color: #eee;}
+.report_category #treecontrol { margin: 1em 0; display: none; }
+.report_category .treeview .hover { color: red; cursor: pointer; }
+.report_category .treeview li { background: url(../img/rtl-treeview-default-line.gif) 100% -2px no-repeat; }
+.report_category .treeview li.collapsable, .report_category .treeview li.expandable { background-position: 100% -177px; }
+.report_category .treeview .expandable-hitarea { background: url(../img/rtl-treeview-default-e.gif) 0 2px no-repeat; }
+.report_category .treeview li.last { background-position: 100% -1768px }
+.report_category .treeview li.lastCollapsable, .report_category .treeview li.lastExpandable { background: url(); }
+.report_category .report_category .treeview div.lastCollapsable-hitarea { background: url(../img/rtl-treeview-default-lc.gif) 0 0 no-repeat; }
+.report_category .treeview div.lastExpandable-hitarea { background: url(../img/rtl-treeview-default-le.gif) 0 0 no-repeat; }
+.report_category ul li input.check-box {margin: 0 0 3px 3px;}
+
