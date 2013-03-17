@@ -112,3 +112,8 @@ a.show-more {
 .step-2 .box label input {
     float: right;
 }
+
+.navbar .nav > li > a{
+    font-size: 15px;
+    color: #333
+}
