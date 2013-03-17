@@ -1,6 +1,6 @@
 <!-- main body -->
 
-<div class="row">
+<div class="row" style="position: relative">
 	<div class="span12">
 		<?php if ($site_message != ''): ?>
 		<div class="alert alert-success">
@@ -41,8 +41,8 @@
 					</a>
 				</li>
 				<?php
-				foreach ($categories as $category => $category_info)
-				{
+				foreach ($categories as $category => $category_info):
+				
 					$category_title = htmlentities($category_info[0], ENT_QUOTES, "UTF-8");
 					$category_color = $category_info[1];
 					$category_image = ($category_info[2] != NULL)
@@ -59,20 +59,18 @@
 							));
 						$color_css = '';
 					}
-
-					echo '<li>'
-					. '<a href="#" id="cat_'. $category .'" title="'.$category_description.'">'
-					. '<span '.$color_css.'>'.$category_image.'</span>'
-					. '<span class="category-title">'.$category_title.'</span>'
-					. '</a>';
-
-						// Get Children
-					echo '<div class="hide" id="child_'. $category .'">';
-					if (sizeof($category_info[3]) != 0)
-					{
-						echo '<ul>';
-						foreach ($category_info[3] as $child => $child_info)
-						{
+                                        $hasSubMenu = sizeof($category_info[3]) != 0;
+                                        ?>
+                                    <li class="<?=$hasSubMenu?'dropdown-submenu':''?>">
+					<a href="#" id="cat_<?=$category?>" title="<?=$category_description?>">
+                                		<span <?=$color_css?>><?=$category_image?></span>
+                                        	<span class="category-title"><?=$category_title?></span>
+					</a>
+                                        <?php if ($hasSubMenu): ?>
+                                        <ul class="dropdown-menu">
+                                                 <?php    
+						foreach ($category_info[3] as $child => $child_info):
+						
 							$child_title = htmlentities($child_info[0], ENT_QUOTES, "UTF-8");
 							$child_color = $child_info[1];
 							$child_image = ($child_info[2] != NULL)
@@ -90,19 +88,19 @@
 
 								$color_css = '';
 							}
-
-							echo '<li style="padding-left:20px;">'
-							. '<a href="#" id="cat_'. $child .'" title="'.$child_description.'">'
-							. '<span '.$color_css.'>'.$child_image.'</span>'
-							. '<span class="category-title">'.$child_title.'</span>'
-							. '</a>'
-							. '</li>';
-						}
-						echo '</ul>';
-					}
-					echo '</div></li>';
-				}
-				?>
+                                                        ?>
+							<li>
+							<a href="#" id="cat_ <?= $child ?>" title="<?=$child_description?>">
+							<span <?=$color_css?>><?=$child_image?></span>
+							<span class="category-title"><?=$child_title?></span>
+							</a>
+							</li>
+						<?php endforeach; ?>
+                                                
+						</ul>
+                                                <?php endif ?>
+                                    </li>
+				<?php endforeach; ?>
 
 			</ul>
 		</div>
@@ -186,11 +184,12 @@
 	<div>
 		<!--strong><?php echo Kohana::lang('ui_main.filters'); ?></strong-->
 		<div class="btn-group btn-group-vertical">
-			<a id="media_0" class=" btn active  href="#" title="<?php echo Kohana::lang('ui_main.all'); ?>"><i class="icon-asterisk""></i></a>
+			<a id="media_0" class=" btn active  href="#" title="<?php echo Kohana::lang('ui_main.all'); ?>"><i class="icon-asterisk"></i></a>
 			<a id="media_4" href="#" class="btn" title="<?php echo Kohana::lang('ui_main.news'); ?>"><i class="icon-bullhorn"></i></a>
 			<a id="media_1" href="#" class="btn" title="<?php echo Kohana::lang('ui_main.pictures'); ?>"><i class="icon-picture"></i></a>
 			<a id="media_2" href="#" class="btn" title="<?php echo Kohana::lang('ui_main.video'); ?>"><i class="icon-film"></i></a>
 		</div>
+            
 	</div>
 
 
@@ -200,6 +199,11 @@
 	?>
 </div>
 <!-- / filters -->
+
+<div class="btn-group btn-group-vertical" id="resize-map">
+                <a id="bigmap" class=" btn  href="#" title="big map"><i class="icon-resize-full"></i></a>
+                <a id="smallmap" class=" btn active  href="#" title="small map"><i class="icon-resize-small"></i></a>
+            </div>
 
 	</div>
 
