@@ -97,6 +97,10 @@ a.show-more {
     padding-left: 10px;
 }
 
+div.language-box{
+   float: left;
+}
+
 #reset_all_filters, #applyFilters{
     margin: 5px;
 }

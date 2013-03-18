@@ -44,7 +44,6 @@ div.language-box select{
 div.language-box{
     padding: 0px;
     margin: 0px !important;
-    float: inherit !important;;
 }
 
 div.language-box form{ margin: 0px;}
