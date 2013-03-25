@@ -226,14 +226,9 @@ echo $div_map;
 
 
 <!-- content -->
-<div class="content-container well">
-
+<div class="container">
 	<!-- content blocks -->
-	<div class="content-blocks clearingfix">
-		<ul class="content-column">
-			<?php blocks::render(); ?>
-		</ul>
-	</div>
+	<?php blocks::render(); ?>
 	<!-- /content blocks -->
 
 </div>
