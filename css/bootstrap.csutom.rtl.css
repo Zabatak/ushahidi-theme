@@ -44,7 +44,7 @@
 p,a,label,caption,legend, input, body, .step-2 .box label, .step-1 .map p ,input, button, select, textarea
 {font-family:  Tahoma}
 
-h1,h2,h3,h4,h5,.navbar .nav a
+h1,h2,h3,h4,h5,.navbar .nav a, .fonty, .r_title
 {font-family: HelveticaNeueArabic-light, Tahoma}
 
 
@@ -98,7 +98,7 @@ a.show-more {
 }
 
 #header div.language-box{
-   float: left;
+    float: left;
 }
 
 #reset_all_filters, #applyFilters{
@@ -118,28 +118,28 @@ a.show-more {
 /** reort category */
 
 .report_category .treeview,.report_category  .treeview ul { 
-  padding: 0;
-  margin: 0;
-  list-style: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
 .report_category  .treeview ul {
-  background-color: white;
-  margin-top: 4px;
+    background-color: white;
+    margin-top: 4px;
 }
 
 .report_category .treeview .hitarea {
-  background: url(../img/rtl-treeview-default-c.gif) 0 2px no-repeat;
-  height: 16px;
-  width: 16px;
-  margin-right: -16px;
-  float: right;
-  cursor: pointer;
+    background: url(../img/rtl-treeview-default-c.gif) 0 2px no-repeat;
+    height: 16px;
+    width: 16px;
+    margin-right: -16px;
+    float: right;
+    cursor: pointer;
 }
 
 .report_category  .treeview li { 
-  margin: 0;
-  padding: 0px 16px 2px 0px;
+    margin: 0;
+    padding: 0px 16px 2px 0px;
 }
 
 .report_category .treeview a.selected {background-color: #eee;}
@@ -154,3 +154,29 @@ a.show-more {
 .report_category .treeview div.lastExpandable-hitarea { background: url(../img/rtl-treeview-default-le.gif) 0 0 no-repeat; }
 .report_category ul li input.check-box {margin: 0 0 3px 3px;}
 
+
+.r_details {
+    float: right;
+    width: auto;
+    margin: 3px 10px;
+}
+
+p.r_date {
+left: 103px;
+right: inherit;
+}
+
+
+li.report-listing-category-child{
+    padding-right: 20px;
+    padding-left: 0px;
+}
+
+ul.filter-list li a span.item-swatch {
+    float: right;
+}
+
+ul.filter-list li a span.item-count {
+    left: 20px;
+    right: inherit;
+}
