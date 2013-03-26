@@ -189,28 +189,28 @@ body div.filters a, #resize-map a {
 }
 
 .navbar .nav > li > a {
-font-size: 15px;
-color: #fff;
-text-shadow:none;
+    font-size: 15px;
+    color: #fff;
+    text-shadow:none;
 
 }
 
 
 div.content-container {
-background: #fae8c5;
+    background: #fae8c5;
 }
 
 /* nav bar colors */
 
 .navbar-inner {
-background-color: #637d71;
-background-image: -moz-linear-gradient(top, #637d71, #01592f);
-background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#637d71), to(#01592f));
-background-image: -webkit-linear-gradient(top, #637d71, #01592f);
-background-image: -o-linear-gradient(top, #637d71, #01592f);
-background-image: linear-gradient(to bottom, #637d71, #01592f);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#637d71', endColorstr='#01592f', GradientType=0);
-border: 1px solid #01592f;
+    background-color: #637d71;
+    background-image: -moz-linear-gradient(top, #637d71, #01592f);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#637d71), to(#01592f));
+    background-image: -webkit-linear-gradient(top, #637d71, #01592f);
+    background-image: -o-linear-gradient(top, #637d71, #01592f);
+    background-image: linear-gradient(to bottom, #637d71, #01592f);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#637d71', endColorstr='#01592f', GradientType=0);
+    border: 1px solid #01592f;
 }
 /* end color */
 
@@ -221,16 +221,71 @@ border: 1px solid #01592f;
 
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
-  color: #333333;
+    color: #333333;
 }
 .navbar .nav > .active > a,
 .navbar .nav > .active > a:hover,
 .navbar .nav > .active > a:focus {
-  color: #555555;
-  background-color: #e5e5e5;
+    color: #555555;
+    background-color: #e5e5e5;
 }
 
 .child-cat{
     margin: 0px 10px;
+}
+
+
+/* override pager */
+
+ul.pager {
+    margin:inherit;
+    padding:inherit;
+}
+
+ul.pager li{
+    display:inline;
+    margin:0 0 0 0;
+    font-size:inherit;
+    font-weight:normal;
+    color:initial;
+    border:none;
+    float:right;
+    list-style:none;
+}
+
+ul.pager li a{
+    text-decoration:none;
+    color: #0088cc;
+    padding:0;
+
+}
+
+ul.pager li a:hover,
+ul.pager li a.active {background:inherit;}
+/* end pager */
+
+
+.r_details h3 {
+    margin-bottom: 0px;
+    width: auto;
+}
+
+.r_details h3 a.r_comments, .btn-more{
+    display: none;
+}
+
+.r_details h3 {
+    margin-top: -15px;
+}
+
+#rb_list-view .rb_report {
+    overflow: hidden;
+}
+
+.r_details h3 span.r_unverified {
+    line-height: 15px;
+}
+.r_details h3 span.r_verified {
+    line-height: 15px;
 }
 
