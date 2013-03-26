@@ -14,15 +14,14 @@
 ?> 
 		<!-- Top reportbox section-->
 
-
 <div class="row report-list-bar" >
-	<div class="span2">
+	<div class="span3">
 		<ul class="nav nav-pills report-list-toggle ">
 			<li class="active"><a href="#rb_list-view" class="list"><i class="icon-list"></i> <?php echo Kohana::lang('ui_main.list'); ?></a></li>
 			<li><a href="#rb_map-view" class="map"><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.map'); ?></a></li>
 		</ul>
 	</div>
-	<div class="pull-right pagination-right span6 link-toggle report-list-toggle">
+	<div class="pull-right pagination-right span5 link-toggle report-list-toggle">
 		<?php echo $pagination; ?>
 	</div>
 	<hr class="span8"/>
@@ -48,7 +47,7 @@
 					// Trim to 150 characters without cutting words
 					// XXX: Perhaps delcare 150 as constant
 
-					$incident_description = text::limit_chars(strip_tags($incident_description), 140, "...", true);
+					$incident_description = text::limit_chars(strip_tags($incident_description), 240, "...", true);
 					$incident_date = date('H:i M d, Y', strtotime($incident->incident_date));
 					//$incident_time = date('H:i', strtotime($incident->incident_date));
 					$location_id = $incident->location_id;
@@ -130,9 +129,9 @@
 								<?php echo $incident_verified; ?>
 							</h3>
 						<p class="r_date r-3 bottom-cap"><?php echo $incident_date; ?></p>
-						<div class="r_description"> <?php echo $incident_description; ?>  
-						  <a class="btn-show btn-more" href="#<?php echo $incident_id ?>"><?php echo Kohana::lang('ui_main.more_information'); ?> &raquo;</a> 
-						  <a class="btn-show btn-less" href="#<?php echo $incident_id ?>">&laquo; <?php echo Kohana::lang('ui_main.less_information'); ?></a> 
+						<div class="r_description "> <?php echo $incident_description; ?>  
+						  <!--a class="btn-show btn-more" href="#<?php echo $incident_id ?>"><?php echo Kohana::lang('ui_main.more_information'); ?> &raquo;</a> 
+						  <a class="btn-show btn-less" href="#<?php echo $incident_id ?>">&laquo; <?php echo Kohana::lang('ui_main.less_information'); ?></a--> 
 						</div>
 						<p class="r_location"><a href="<?php echo url::site("reports/?l=$location_id"); ?>"><?php echo html::specialchars($location_name); ?></a></p>
 						<?php
