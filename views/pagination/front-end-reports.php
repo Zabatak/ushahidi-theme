@@ -19,8 +19,8 @@
  */
 ?>
 <div class="pagination">
-	<ul>
-		<li class="<?php echo ($current_page > 1)?'':'disabled' ?>"><a href="#page_<?php echo $previous_page; ?>" class="prev">«</a></li>	
+	<ul class="pager">
+	
 		<?php if ($total_pages < 10): /* « Previous  1 2 3 4 5 6 7 8 9 10 11 12  Next » */ ?>
 
 			<?php for ($i = 1; $i <= $total_pages; $i++): ?>
@@ -41,13 +41,13 @@
 				<?php endif ?>
 			<?php endfor; ?>
 
-			<li><a>&hellip;</a></li>
+                        <li><span><a>&hellip;</a></span></li>
 			<li><span><a href="<?php echo str_replace('{page}', $total_pages - 1, $url) ?>"><?php echo $total_pages - 1 ?></a></span></li>
 			<li><span><a href="<?php echo str_replace('{page}', $total_pages, $url) ?>"><?php echo $total_pages ?></a></span></li>
 		
 		<?php elseif ($current_page < 100): ?>	
 			<li><span><a href="<?php echo str_replace('{page}', 1, $url) ?>">1</a></span></li>
-			<li><a>&hellip;</a></li>
+                        <li><span><a>&hellip;</a></span></li>
 			
 			<?php
 				$num_pages_substract = 0;
@@ -77,7 +77,7 @@
 		<?php else: /* « Previous  1 2 … 5 6 7 8 9 10 11 12 13 14 … 25 26  Next » */ ?>
 
 			<li><span><a href="<?php echo str_replace('{page}', 1, $url) ?>">1</a></span></li>
-			<li><a>&hellip;</a></li>
+                        <li><span><a>&hellip;</a></span></li>
 			<?php $num_pages_add = ($current_page == $total_pages)? 0 : 1; ?>	
 			<?php for ($i = $current_page - 1; $i <= $current_page + $num_pages_add; $i++): ?>
 				<?php if ($i == $current_page): ?>
@@ -88,11 +88,11 @@
 			<?php endfor ?>
 			
 			<?php if (($current_page + 1) < $total_pages): ?>
-				<li><a>&hellip;</a></li>
+                                <li><span><a>&hellip;</a></span></li>
 				<li><span><a href="<?php echo str_replace('{page}', $total_pages, $url) ?>"><?php echo $total_pages ?></a></span></li>
 			<?php endif; ?>
+
 		<?php endif ?>
 
-		<li class="<?php echo ($total_pages > 1 and $current_page < $total_pages)?'':'disabled' ?>"><a href="#page_<?php echo $next_page; ?>" class="next">»</a></li>
 	</ul>
 </div>
