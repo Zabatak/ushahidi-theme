@@ -2,6 +2,7 @@
 		<!-- / main body -->
 
 	
+<hr  class="header"/>
 
 <!-- footer -->
 <div id="footer">
