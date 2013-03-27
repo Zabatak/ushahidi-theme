@@ -44,7 +44,7 @@
 p,a,label,caption,legend, input, body, .step-2 .box label, .step-1 .map p ,input, button, select, textarea
 {font-family:  Tahoma}
 
-h1,h2,h3,h4,h5,.navbar .nav a, .fonty, .r_title
+h1,h2,h3,h4,h5,.navbar .nav a, .fonty, .r_title, .feature_more, .more
 {font-family: HelveticaNeueArabic-light, Tahoma}
 
 
@@ -161,7 +161,7 @@ a.show-more {
     margin: 3px 10px;
 }
 
-p.r_date {
+#rb_list-view p.r_date {
 left: 103px;
 right: inherit;
 }
@@ -180,3 +180,10 @@ ul.filter-list li a span.item-count {
     left: 20px;
     right: inherit;
 }
+
+.feature_more{
+    float: left;
+}
+
+.report_detail div span.label{float: left}
+.report_detail div.report-category-list a{float: right}
