@@ -210,7 +210,6 @@
 <!-- / additional content -->
 
 
-
 <?php endif; ?>
 <div id="content">
 <?php
@@ -223,6 +222,7 @@ echo $div_map;
 </div>
 </div>
 
+<hr  class="header"/>
 
 
 <!-- content -->
@@ -233,4 +233,3 @@ echo $div_map;
 
 </div>
 <!-- content -->
-
