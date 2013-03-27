@@ -60,7 +60,7 @@ elseif (count($uri_segments) >= 2)
 <div id="container" class="container">
   <div id="header">
     <div class="row">
-      <div class="span6">
+      <div class="span3">
 
         <!-- logo -->
         <?php if ($banner == NULL): ?>
@@ -73,11 +73,35 @@ elseif (count($uri_segments) >= 2)
     <?php endif; ?>
     <!-- / logo -->
   </div>
+        
+        <div class="span9">
+            <!-- mainmenu -->
+            <div class="navbar" >
+              <div class="navbar-inner">
+                <div class="container">
+
+                  <ul class="nav">
+                    <?php nav::main_tabs($this_page); ?>
+                    <?php if ($allow_feed == 1) { ?>
+                    <li id="feed"> <a href="<?php echo url::site(); ?>feed/"><img alt="<?php echo htmlentities(Kohana::lang('ui_main.rss'), ENT_QUOTES); ?>" src="<?php echo url::file_loc('img'); ?>media/img/icon-feed.png"  /></a></li>
+                    <?php } ?>
+                   
+                  </ul>
+                        <?php echo form::open("search", array('method' => 'get', 'id' => 'search', 'class'=>'navbar-search pull-left')) ?>
+                        <input type="text" class="search-query" placeholder="<?php echo Kohana::lang('ui_main.search')?>">
+                      </form>
+            
+                </div>
+              </div>
+            </div>
+            <!--/ mainmenu -->
+        </div>
+    <?php /*    
   <div class="span6">
     <div class="row">
       <div class="span3">
         <!-- languages -->
-        <?php echo $languages;?>
+        <?php //echo $languages;?>
         <!-- / languages -->
       </div>
 
@@ -105,11 +129,13 @@ elseif (count($uri_segments) >= 2)
       </div>
 
     </div>
+        
+     */?>   
   </div>
 </div>
 <!--/ containter -->
 
-
+<hr  class="header"/>
 
 
 <!-- / header -->
@@ -119,22 +145,7 @@ elseif (count($uri_segments) >= 2)
 Event::run('ushahidi_action.header_item');
 ?>
 
-<!-- mainmenu -->
-<div class="navbar" >
-  <div class="navbar-inner">
-    <div class="container" style="width: auto; padding: 0 20px;">
 
-      <ul class="nav">
-        <?php nav::main_tabs($this_page); ?>
-        <?php if ($allow_feed == 1) { ?>
-        <li> <a href="<?php echo url::site(); ?>feed/"><img alt="<?php echo htmlentities(Kohana::lang('ui_main.rss'), ENT_QUOTES); ?>" src="<?php echo url::file_loc('img'); ?>media/img/icon-feed.png"  /></a></li>
-        <?php } ?>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!--/ mainmenu -->
 
 <!-- main body -->
 
