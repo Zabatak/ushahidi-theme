@@ -34,6 +34,12 @@ $(document).ready( function() {
             $(this).addClass('active');
             $('#bigmap').removeClass('active');
         });
+        
+        
+        //hide "home" link
+        $('.navbar .nav a[href$=main]').hide();
+        $('.page_text img').addClass('img-polaroid');
+        $('.more').addClass('btn btn-small btn-info');
 
 
 });
