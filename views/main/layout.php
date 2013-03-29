@@ -147,7 +147,7 @@
 				<?php if ( ! empty($twitter_hashtag_array)): ?>
 					<li class="disabled"><a><?php echo Kohana::lang('ui_main.report_option_3'); ?>:</a>
 						<?php foreach ($twitter_hashtag_array as $twitter_hashtag): ?>
-						<li>#<?php echo $twitter_hashtag; ?></li>
+						<li><a>#<?php echo $twitter_hashtag; ?></a></li>
 						<?php if ($twitter_hashtag != end($twitter_hashtag_array)): ?>
 					<?php endif; ?>
 				<?php endforeach; ?>
