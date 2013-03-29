@@ -70,7 +70,7 @@
 			<?php endfor; ?>
 			
 			<?php if (($current_page + ($num_pages_add + 1)) < $total_pages): ?>
-				<li><a>&hellip;</a></li>
+                                        <li><span><a>&hellip;</a></span></li>
 				<li><span><a href="<?php echo str_replace('{page}', $total_pages, $url) ?>"><?php echo $total_pages ?></a></span></li>
 			<?php endif; ?>
 			
