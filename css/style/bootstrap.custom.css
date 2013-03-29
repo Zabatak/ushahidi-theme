@@ -319,3 +319,9 @@ hr.header{
     z-index: 100;
     left: 204px;
 }
+
+
+#reports-box {
+    float: none;
+    width: auto;
+}
