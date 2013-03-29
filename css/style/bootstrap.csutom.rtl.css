@@ -44,7 +44,7 @@
 p,a,label,caption,legend, input, body, .step-2 .box label, .step-1 .map p ,input, button, select, textarea
 {font-family:  Tahoma}
 
-h1,h2,h3,h4,h5,.navbar .nav a, .fonty, .r_title, .feature_more, .more
+h1,h2,h3,h4,h5,.navbar .nav a, .fonty, .r_title, .feature_more, .more, .filter-list .item-title
 {font-family: HelveticaNeueArabic-light, Tahoma}
 
 
@@ -187,3 +187,17 @@ ul.filter-list li a span.item-count {
 
 .report_detail div span.label{float: left}
 .report_detail div.report-category-list a{float: right}
+
+
+
+.filter-list .item-title{
+    font-family: HelveticaNeueArabic-bold;
+}
+
+.filter-list .report-listing-category-child .item-title{
+    font-family: HelveticaNeueArabic-light;
+}
+
+#reports-list{
+    float: left;
+}

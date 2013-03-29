@@ -118,8 +118,10 @@ div.footermenu ul li a {
     margin: 0px;
 }
 
-.report-list-bar  hr{
-    margin: 10px 0px;
+.report-list-bar {
+    margin-bottom: 10px;
+    margin-top: 10px;
+
 }
 
 .time select{
@@ -320,8 +322,46 @@ hr.header{
     left: 204px;
 }
 
+/* summary reprot */
+.report-summary .report-summary-extra{
+    margin: 0px;
+    text-align: left;
+}
 
 #reports-box {
     float: none;
     width: auto;
+}
+
+.report-summary{
+    padding: 8px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.report-summary-icons {
+    direction: ltr;
+}
+
+.filter-list .item-title{
+    font-weight: bold;
+}
+
+.filter-list .report-listing-category-child .item-title{
+    font-weight: normal;
+}
+
+.feature_more{
+    margin: 0px;
+}
+
+#reports-box hr{
+    margin: 10px 0px;
+}
+
+.latest-article{
+    margin: 0px 9px;
+}
+
+.report-tabs{
+    margin-right: 0px; 
 }
