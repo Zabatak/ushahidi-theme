@@ -12,154 +12,173 @@
  * @license    http://www.gnu.org/copyleft/lesser.html GNU Lesser General Public License (LGPL) 
  */
 ?> 
-		<!-- Top reportbox section-->
-
+<!-- Top reportbox section-->
 <div class="row report-list-bar" >
-	<div class="span3">
-		<ul class="nav nav-pills report-list-toggle ">
-			<li class="active"><a href="#rb_list-view" class="list"><i class="icon-list"></i> <?php echo Kohana::lang('ui_main.list'); ?></a></li>
-			<li><a href="#rb_map-view" class="map"><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.map'); ?></a></li>
-		</ul>
-	</div>
-	<div class="pull-right pagination-right span5 link-toggle report-list-toggle">
-		<?php echo $pagination; ?>
-	</div>
-	<hr class="span8"/>
+    <div class="span3">
+        <ul class="nav nav-pills report-list-toggle ">
+            <li class="active"><a href="#rb_list-view" class="list"><i class="icon-list"></i> <?php echo Kohana::lang('ui_main.list'); ?></a></li>
+            <li><a href="#rb_map-view" class="map"><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.map'); ?></a></li>
+        </ul>
+    </div>
+    <div class="pull-right pagination-right span5 link-toggle report-list-toggle">
+        <?php echo $pagination; ?>
+    </div>
 </div>
 
 <?php //echo $stats_breadcrumb; ?>
+<hr class="span8"/>
 
-		
-		<!-- /Top reportbox section-->
-		
-		<!-- Report listing -->
-		<div class="r_cat_tooltip"><a href="#" class="r-3"></a></div>
-		<div class="rb_list-and-map-box">
-			<div id="rb_list-view">
-			<?php
-				foreach ($incidents as $incident)
-				{
-					$incident_id = $incident->incident_id;
-					$incident_title = strip_tags($incident->incident_title);
-					$incident_description = strip_tags($incident->incident_description);
-					$incident_url = Incident_Model::get_url($incident_id);
-					//$incident_category = $incident->incident_category;
-					// Trim to 150 characters without cutting words
-					// XXX: Perhaps delcare 150 as constant
 
-					$incident_description = text::limit_chars(strip_tags($incident_description), 240, "...", true);
-					$incident_date = date('H:i M d, Y', strtotime($incident->incident_date));
-					//$incident_time = date('H:i', strtotime($incident->incident_date));
-					$location_id = $incident->location_id;
-					$location_name = $incident->location_name;
-					$incident_verified = $incident->incident_verified;
+<!-- /Top reportbox section-->
 
-					if ($incident_verified)
-					{
-						$incident_verified = '<span class="r_verified">'.Kohana::lang('ui_main.verified').'</span>';
-						$incident_verified_class = "verified";
-					}
-					else
-					{
-						$incident_verified = '<span class="r_unverified">'.Kohana::lang('ui_main.unverified').'</span>';
-						$incident_verified_class = "unverified";
-					}
+<!-- Report listing -->
+<div class="r_cat_tooltip"><a href="#" class="r-3"></a></div>
+<div class="rb_list-and-map-box ">
+    <div id="rb_list-view ">
 
-					$comment_count = ORM::Factory('comment')->where('incident_id', $incident_id)->count_all();
 
-					$incident_thumb = url::file_loc('img')."media/img/report-thumb-default.jpg";
-					$media = ORM::Factory('media')->where('incident_id', $incident_id)->find_all();
-					if ($media->count())
-					{
-						foreach ($media as $photo)
-						{
-							if ($photo->media_thumb)
-							{ // Get the first thumb
-								$incident_thumb = url::convert_uploaded_to_abs($photo->media_thumb);
-								break;
-							}
-						}
-					}
-				?>
-				<div id="incident_<?php echo $incident_id ?>" class="rb_report <?php echo $incident_verified_class; ?>">
-					<div class="r_media">
-						<p class="r_photo" style="text-align:center;"> <a href="<?php echo $incident_url; ?>">
-							<img alt="<?php echo htmlentities($incident_title, ENT_QUOTES); ?>" src="<?php echo $incident_thumb; ?>" style="max-width:89px;max-height:59px;" /> </a>
-						</p>
 
-						<!-- Only show this if the report has a video -->
-						<p class="r_video" style="display:none;"><a href="#"><?php echo Kohana::lang('ui_main.video'); ?></a></p>
+        <?php
+        foreach ($incidents as $incident) {
+            $incident_id = $incident->incident_id;
+            $incident_title = strip_tags($incident->incident_title);
+            $incident_description = strip_tags($incident->incident_description);
+            $incident_url = Incident_Model::get_url($incident_id);
+            //$incident_category = $incident->incident_category;
+            // Trim to 150 characters without cutting words
+            // XXX: Perhaps delcare 150 as constant
 
-						<!-- Category Selector -->
-						<div class="r_categories">
-							<h4><?php echo Kohana::lang('ui_main.categories'); ?></h4>
-							<?php
-							$categories = ORM::Factory('category')->join('incident_category', 'category_id', 'category.id')->where('incident_id', $incident_id)->find_all();
-							foreach ($categories as $category): ?>
-								
-								<?php // Don't show hidden categories ?>
-								<?php if($category->category_visible == 0) continue; ?>
-						
-								<?php if ($category->category_image_thumb): ?>
-									<?php $category_image = url::site(Kohana::config('upload.relative_directory')."/".$category->category_image_thumb); ?>
-									<a class="r_category" href="<?php echo url::site("reports/?c=$category->id") ?>">
-										<span class="r_cat-box"><img src="<?php echo $category_image; ?>" height="16" width="16" /></span> 
-										<span class="r_cat-desc"><?php echo Category_Lang_Model::category_title($category->id); ?></span>
-									</a>
-								<?php else:	?>
-									<a class="r_category" href="<?php echo url::site("reports/?c=$category->id") ?>">
-										<span class="r_cat-box" style="background-color:#<?php echo $category->category_color;?>;"></span> 
-										<span class="r_cat-desc"><?php echo Category_Lang_Model::category_title($category->id); ?></span>
-									</a>
-								<?php endif; ?>
-							<?php endforeach; ?>
-						</div>
-						<?php
-						// Action::report_extra_media - Add items to the report list in the media section
-						Event::run('ushahidi_action.report_extra_media', $incident_id);
-						?>
-					</div>
+            $incident_description = text::limit_chars(strip_tags($incident_description), 240, "...", true);
+            $incident_date = date('H:i M d, Y', strtotime($incident->incident_date));
+            $incident_shortdate = date('M d, Y', strtotime($incident->incident_date));
+            //$incident_time = date('H:i', strtotime($incident->incident_date));
+            $location_id = $incident->location_id;
+            $location_name = $incident->location_name;
+            $incident_verified = $incident->incident_verified;
 
-					<div class="r_details">
-						<h3><a class="r_title" href="<?php echo $incident_url; ?>">
-								<?php echo htmlentities($incident_title); ?>
-							</a>
-							<a href="<?php echo "$incident_url#discussion"; ?>" class="r_comments">
-								<?php echo $comment_count; ?></a> 
-								<?php echo $incident_verified; ?>
-							</h3>
-						<p class="r_date r-3 bottom-cap"><?php echo $incident_date; ?></p>
-						<div class="r_description "> <?php echo $incident_description; ?>  
-						  <!--a class="btn-show btn-more" href="#<?php echo $incident_id ?>"><?php echo Kohana::lang('ui_main.more_information'); ?> &raquo;</a> 
-						  <a class="btn-show btn-less" href="#<?php echo $incident_id ?>">&laquo; <?php echo Kohana::lang('ui_main.less_information'); ?></a--> 
-						</div>
-						<p class="r_location"><a href="<?php echo url::site("reports/?l=$location_id"); ?>"><?php echo html::specialchars($location_name); ?></a></p>
-						<?php
-						// Action::report_extra_details - Add items to the report list details section
-						Event::run('ushahidi_action.report_extra_details', $incident_id);
-						?>
-					</div>
-				</div>
-			<?php } ?>
-			</div>
-			<div id="rb_map-view" style="display:none; width: 590px; height: 384px; border:1px solid #CCCCCC; margin: 3px auto;">
-			</div>
-		</div>
-		<!-- /Report listing -->
-		
-		<!-- Bottom paginator -->
-		<div class="row report-list-bar" >
-			<hr class="span8"/>
-	<div class="span2">
-		<ul class="nav nav-pills report-list-toggle ">
-			<li class="active"><a href="#rb_list-view" class="list"><i class="icon-list"></i> <?php echo Kohana::lang('ui_main.list'); ?></a></li>
-			<li><a href="#rb_map-view" class="map"><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.map'); ?></a></li>
-		</ul>
-	</div>
-	<div class="pull-right pagination-right span6 link-toggle report-list-toggle">
-		<?php echo $pagination; ?>
-	</div>
-	
+            if ($incident_verified) {
+                $incident_verified = '<span class="r_verified">' . Kohana::lang('ui_main.verified') . '</span>';
+                $incident_verified_class = "verified";
+            } else {
+                $incident_verified = '<span class="r_unverified">' . Kohana::lang('ui_main.unverified') . '</span>';
+                $incident_verified_class = "unverified";
+            }
+
+            $comment_count = ORM::Factory('comment')->where('incident_id', $incident_id)->count_all();
+            $category = ORM::Factory('category')->join('incident_category', 'category_id', 'category.id')
+                    ->where('incident_id', $incident_id)
+                    ->where('category_visible', 1)
+                    ->find();
+
+
+
+
+            $incident_thumb = url::file_loc('img') . "media/img/report-thumb-default.jpg";
+            $media = ORM::Factory('media')->where('incident_id', $incident_id)->find_all();
+            if ($media->count()) {
+                foreach ($media as $photo) {
+                    if ($photo->media_thumb) { // Get the first thumb
+                        $incident_thumb = url::convert_uploaded_to_abs($photo->media_thumb);
+                        break;
+                    }
+                }
+            }
+            ?>
+            <?php
+            echo View::factory('reports/report-summary', array(
+                'incident_id' => $incident_id,
+                //'incident_location' => $incident_location,
+                'incident_title' => $incident_title,
+                'incident_thumb' => $incident_thumb,
+                'incident_date' => $incident_date,
+                'comment_count' => $comment_count,
+                'incident_url' => $incident_url,
+                'incident_description' => $incident_description,
+                'category' => $category,
+                'incident_verified' => $incident->incident_verified,
+                    )
+            )->render();
+            ?>  
+            <?php /*
+              <div id="incident_<?php echo $incident_id ?>" class="rb_report <?php echo $incident_verified_class; ?>">
+              <div class="r_media">
+              <p class="r_photo" style="text-align:center;"> <a href="<?php echo $incident_url; ?>">
+              <img alt="<?php echo htmlentities($incident_title, ENT_QUOTES); ?>" src="<?php echo $incident_thumb; ?>" style="max-width:89px;max-height:59px;" /> </a>
+              </p>
+
+              <!-- Only show this if the report has a video -->
+              <p class="r_video" style="display:none;"><a href="#"><?php echo Kohana::lang('ui_main.video'); ?></a></p>
+
+              <!-- Category Selector -->
+              <div class="r_categories">
+              <h4><?php echo Kohana::lang('ui_main.categories'); ?></h4>
+              <?php
+              $categories = ORM::Factory('category')->join('incident_category', 'category_id', 'category.id')->where('incident_id', $incident_id)->find_all();
+              foreach ($categories as $category): ?>
+
+              <?php // Don't show hidden categories ?>
+              <?php if($category->category_visible == 0) continue; ?>
+
+              <?php if ($category->category_image_thumb): ?>
+              <?php $category_image = url::site(Kohana::config('upload.relative_directory')."/".$category->category_image_thumb); ?>
+              <a class="r_category" href="<?php echo url::site("reports/?c=$category->id") ?>">
+              <span class="r_cat-box"><img src="<?php echo $category_image; ?>" height="16" width="16" /></span>
+              <span class="r_cat-desc"><?php echo Category_Lang_Model::category_title($category->id); ?></span>
+              </a>
+              <?php else:	?>
+              <a class="r_category" href="<?php echo url::site("reports/?c=$category->id") ?>">
+              <span class="r_cat-box" style="background-color:#<?php echo $category->category_color;?>;"></span>
+              <span class="r_cat-desc"><?php echo Category_Lang_Model::category_title($category->id); ?></span>
+              </a>
+              <?php endif; ?>
+              <?php endforeach; ?>
+              </div>
+              <?php
+              // Action::report_extra_media - Add items to the report list in the media section
+              Event::run('ushahidi_action.report_extra_media', $incident_id);
+              ?>
+              </div>
+
+              <div class="r_details">
+              <h3><a class="r_title" href="<?php echo $incident_url; ?>">
+              <?php echo htmlentities($incident_title); ?>
+              </a>
+              <a href="<?php echo "$incident_url#discussion"; ?>" class="r_comments">
+              <?php echo $comment_count; ?></a>
+              <?php echo $incident_verified; ?>
+              </h3>
+              <p class="r_date r-3 bottom-cap"><?php echo $incident_date; ?></p>
+              <div class="r_description "> <?php echo $incident_description; ?>
+              <!--a class="btn-show btn-more" href="#<?php echo $incident_id ?>"><?php echo Kohana::lang('ui_main.more_information'); ?> &raquo;</a>
+              <a class="btn-show btn-less" href="#<?php echo $incident_id ?>">&laquo; <?php echo Kohana::lang('ui_main.less_information'); ?></a-->
+              </div>
+              <p class="r_location"><a href="<?php echo url::site("reports/?l=$location_id"); ?>"><?php echo html::specialchars($location_name); ?></a></p>
+              <?php
+              // Action::report_extra_details - Add items to the report list details section
+              Event::run('ushahidi_action.report_extra_details', $incident_id);
+              ?>
+              </div>
+              </div>
+              <?php */ ?>
+        <?php } ?>
+    </div>
+    <div id="rb_map-view" style="display:none; width: 590px; height: 384px; border:1px solid #CCCCCC; margin: 3px auto;">
+    </div>
 </div>
-		<!-- /Bottom paginator -->
-	        
+<!-- /Report listing -->
+
+<!-- Bottom paginator -->
+<div class="row report-list-bar" >
+
+    <div class="span2">
+        <ul class="nav nav-pills report-list-toggle ">
+            <li class="active"><a href="#rb_list-view" class="list"><i class="icon-list"></i> <?php echo Kohana::lang('ui_main.list'); ?></a></li>
+            <li><a href="#rb_map-view" class="map"><i class="icon-globe"></i> <?php echo Kohana::lang('ui_main.map'); ?></a></li>
+        </ul>
+    </div>
+    <div class="pull-right pagination-right span6 link-toggle report-list-toggle">
+<?php echo $pagination; ?>
+    </div>
+
+</div>
+<!-- /Bottom paginator -->
