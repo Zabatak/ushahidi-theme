@@ -163,7 +163,7 @@
 
 			</ul>
 		</div>
-                /* report now */
+                <!-- report now -->
                 <div id="report_now">
                     <a class="btn btn-danger"  href="<?php echo url::site()?>/reports/submit"><?php echo Kohana::lang('ui_main.submit') ?> <i class="icon-camera icon-white"></i></a>
                 </div>
