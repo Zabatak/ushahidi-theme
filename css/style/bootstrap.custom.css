@@ -316,10 +316,11 @@ hr.header{
 .more{text-decoration: none; font-weight: normal;}
 
 #report_now{
-    position: absolute;
-    top: 20px;
+    position: relative;
+    top: -10px;
     z-index: 100;
-    left: 204px;
+    right: 765px;
+
 }
 
 /* summary reprot */
@@ -364,4 +365,8 @@ hr.header{
 
 .report-tabs{
     margin-right: 0px; 
+}
+
+#sitetag{
+    margin:0px;
 }
