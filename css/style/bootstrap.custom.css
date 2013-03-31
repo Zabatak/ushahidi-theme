@@ -372,3 +372,10 @@ hr.header{
 #sitetag{
     margin:0px;
 }
+
+/* page image */
+
+.page_text img{
+    display: block;
+    margin: auto;
+}
