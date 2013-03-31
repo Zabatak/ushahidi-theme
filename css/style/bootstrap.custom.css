@@ -316,10 +316,12 @@ hr.header{
 .more{text-decoration: none; font-weight: normal;}
 
 #report_now{
-    position: relative;
+    /*position: relative;
     top: -10px;
     z-index: 100;
     right: 765px;
+    */
+    margin-top: 21px;
 
 }
 
