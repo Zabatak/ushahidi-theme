@@ -51,7 +51,7 @@
 
     <body id="page" class="<?php echo $body_class; ?>">
 
-    <?php echo $header_nav; ?>
+        <?php echo $header_nav; ?>
 
         <div id="container" class="container">
             <div id="header">
@@ -59,14 +59,14 @@
                     <div class="span3">
 
                         <!-- logo -->
-<?php if ($banner == NULL): ?>
+                        <?php if ($banner == NULL): ?>
                             <div id="logo">
                                 <h1><a href="<?php echo url::site(); ?>"><?php echo $site_name; ?></a></h1>
                                 <span><?php echo $site_tagline; ?></span>
                             </div>
-<?php else: ?>
+                        <?php else: ?>
                             <a href="<?php echo url::site(); ?>"><img src="<?php echo $banner; ?>" alt="<?php echo $site_name; ?>" /></a>
-<?php endif; ?>
+                        <?php endif; ?>
                         <!-- / logo -->
                     </div>
 
@@ -77,13 +77,13 @@
                                 <div class="container">
 
                                     <ul class="nav">
-<?php nav::main_tabs($this_page); ?>
-<?php if ($allow_feed == 1) { ?>
+                                        <?php nav::main_tabs($this_page); ?>
+                                        <?php if ($allow_feed == 1) { ?>
                                             <li id="feed"> <a href="<?php echo url::site(); ?>feed/"><img alt="<?php echo htmlentities(Kohana::lang('ui_main.rss'), ENT_QUOTES); ?>" src="<?php echo url::file_loc('img'); ?>media/img/icon-feed.png"  /></a></li>
                                         <?php } ?>
 
                                     </ul>
-                                        <?php echo form::open("search", array('method' => 'get', 'id' => 'search', 'class' => 'navbar-search pull-left')) ?>
+                                    <?php echo form::open("search", array('method' => 'get', 'id' => 'search', 'class' => 'navbar-search pull-left')) ?>
                                     <input type="text" class="search-query" placeholder="<?php echo Kohana::lang('ui_main.search') ?>">
                                     </form>
 
@@ -94,8 +94,16 @@
                     </div>
 
                 </div>
-                <div class="row" id="sitetag" >
-                    <h5><?php echo $site_tagline; ?></h5>
+                <div class="row">
+                    <div class="span10" id="sitetag" >
+                        <h5><?php echo $site_tagline; ?></h5>
+                    </div>
+                    <!-- report now -->
+                    <div id="report_now" class="span2">
+                        <a class="btn btn-danger"  href="<?php echo url::site() ?>/reports/submit">
+                            <i class="icon-camera icon-white"></i> <?php echo Kohana::lang('ui_main.submit') ?>
+                        </a>
+                    </div>
                 </div>
             </div>
             <!--/ containter -->
@@ -105,10 +113,10 @@
 
             <!-- / header -->
             <!-- / header item for plugins -->
-<?php
+            <?php
 // Action::header_item - Additional items to be added by plugins
-Event::run('ushahidi_action.header_item');
-?>
+            Event::run('ushahidi_action.header_item');
+            ?>
 
 
 
