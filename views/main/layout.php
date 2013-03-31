@@ -13,6 +13,7 @@
 		<!-- categories -->
 		<div class="btn-group " id="category-btn">
 			<a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                <i class="icon-filter icon-white"></i>
 				<?php echo Kohana::lang('ui_main.filter_reports_by'); ?>
 				<span class="caret"></span>
 			</a>
@@ -111,7 +112,8 @@
 		<?php if (Kohana::config('settings.allow_reports')): ?>
 		<div class="btn-group" id="howtoreport-btn">
 			<a class="btn dropdown-toggle btn btn-warning" data-toggle="dropdown" href="#">
-				<?php echo Kohana::lang('ui_main.how_to_report'); ?>
+                            <i class="icon-question-sign icon-white"></i>
+                            <?php echo Kohana::lang('ui_main.how_to_report'); ?>
 				<span class="caret"></span>
 			</a>
 			<ul class="additional-content dropdown-menu" >
@@ -163,10 +165,7 @@
 
 			</ul>
 		</div>
-                <!-- report now -->
-                <div id="report_now">
-                    <a class="btn btn-danger"  href="<?php echo url::site()?>/reports/submit"><?php echo Kohana::lang('ui_main.submit') ?> <i class="icon-camera icon-white"></i></a>
-                </div>
+                
 
 		<!-- Checkins -->
 			<?php if (Kohana::config('settings.checkins')): ?>
