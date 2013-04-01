@@ -321,8 +321,11 @@ hr.header{
     z-index: 100;
     right: 765px;
     */
-    margin-top: 21px;
+    margin-top: 18px;
 
+}
+#report_now a{
+    float: left;
 }
 
 /* summary reprot */
@@ -370,7 +373,7 @@ hr.header{
 }
 
 #sitetag{
-    margin:0px;
+    margin-left:0px;
 }
 
 /* page image */
