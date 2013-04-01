@@ -382,3 +382,7 @@ hr.header{
     display: block;
     margin: auto;
 }
+
+.navbar-inner{
+    background-image: url("../img/MenuBG.jpg");
+}
