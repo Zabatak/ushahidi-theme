@@ -386,3 +386,9 @@ hr.header{
 .navbar-inner{
     background-image: url("../img/MenuBG.jpg");
 }
+
+
+.tab-content , #rb_list-view{
+overflow: hidden;
+
+}
