@@ -108,7 +108,6 @@
             </div>
             <!--/ containter -->
 
-            <hr  class="header"/>
 
 
             <!-- / header -->
@@ -120,6 +119,7 @@
 
 
 
-            <!-- main body -->
+	    <hr  class="header"/>
+   <!-- main body -->
 
 
