@@ -11,7 +11,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: inherit !important;
     font-size: 12px;
-    background: url('http://subtlepatterns.com/patterns/wood_pattern.png') !important;
 }
 
 
@@ -28,6 +27,8 @@ div#header{
     /*margin: 30px auto;*/
     padding: 15px 30px;
     background: white;
+    background: rgba(255,255,255,0.8);
+    position: relative;
     /*
     -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
@@ -99,7 +100,7 @@ div#footer {
     width: auto;
     clear: both;
     color: #333;
-    background-color: #fff;
+    background-color: initial;
     padding-bottom: 20px;
 }
 
@@ -322,6 +323,7 @@ hr.header{
     right: 765px;
     */
     margin-top: 18px;
+    float: left;
 
 }
 #report_now a{
@@ -389,6 +391,16 @@ hr.header{
 
 
 .tab-content , #rb_list-view{
-overflow: hidden;
+    overflow: hidden;
+
+}
+
+
+body{
+    background: url("../img/main-bg.png");
+    background-position: bottom!important;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 
 }
