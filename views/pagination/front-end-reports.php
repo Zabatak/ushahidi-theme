@@ -25,7 +25,7 @@
 
 			<?php for ($i = 1; $i <= $total_pages; $i++): ?>
 				<?php if ($i == $current_page): ?>
-					<li  class="active"><span><a href="#"><?php echo $i ?></a></span></li>
+					<li  class="active"><span><a class="active" href="#"><?php echo $i ?></a></span></li>
 				<?php else: ?>
 					<li><span><a href="<?php echo str_replace('{page}', $i, $url) ?>"><?php echo $i ?></a></span></li>
 				<?php endif ?>
@@ -35,7 +35,7 @@
 
 			<?php for ($i = 1; $i <= 6; $i++): ?>
 				<?php if ($i == $current_page): ?>
-					<li  class="active"><span><a  href="#"><?php echo $i ?></a></span></li>
+					<li  class="active"><span><a  class="active" href="#"><?php echo $i ?></a></span></li>
 				<?php else: ?>
 					<li><span><a href="<?php echo str_replace('{page}', $i, $url) ?>"><?php echo $i ?></a></span></li>
 				<?php endif ?>
@@ -63,7 +63,7 @@
 			
 			<?php for ($i = $current_page - $num_pages_subtract; $i <= $current_page + $num_pages_add; $i++): ?>
 				<?php if ($i == $current_page): ?>
-					<li  class="active"><span><a href="#" ><?php echo $i ?></a></span></li>
+					<li  class="active"><span><a class="active" href="#" ><?php echo $i ?></a></span></li>
 				<?php else: ?>
 					<li><span><a href="<?php echo str_replace('{page}', $i, $url) ?>"><?php echo $i ?></a></span></li>
 				<?php endif ?>
@@ -81,7 +81,7 @@
 			<?php $num_pages_add = ($current_page == $total_pages)? 0 : 1; ?>	
 			<?php for ($i = $current_page - 1; $i <= $current_page + $num_pages_add; $i++): ?>
 				<?php if ($i == $current_page): ?>
-					<li  class="active"><span><a href="#"><?php echo $i ?></a></span></li>
+					<li  class="active"><span><a class="active" href="#"><?php echo $i ?></a></span></li>
 				<?php else: ?>
 					<li><span><a href="<?php echo str_replace('{page}', $i, $url) ?>"><?php echo $i ?></a></span></li>
 				<?php endif ?>
