@@ -1,0 +1,20 @@
+#socialmedia{
+    position: absolute;
+    top: 91px;
+    margin: 0px 30px;
+    left: 0px;
+
+}
+
+.fb-like{
+    float: left;
+    padding-right: 10px;
+}
+
+#twitter-div {
+    border-radius: 4px; /* to mimic the curved edges of the count box */
+    border-right: 1px solid #AAAAAA; /* this is the width and color of the count box border */
+    height: 20px; /* this height works for the medium button */
+    width: 88px; /* precise width to hide the word */
+    overflow: hidden; /* actually hides the word */
+}
