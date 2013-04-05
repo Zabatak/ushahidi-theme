@@ -1,6 +1,6 @@
 <div class="row-fluid report-summary">
     <div class="span9 report-summary-main">
-        <a href="<?php echo url::site() . 'reports/view/' . $incident_id; ?>" class="fonty"> 
+        <a href="<?php echo url::site() . 'reports/view/' . $incident_id; ?>" class="fonty report-title"> 
             <?php echo html::specialchars($incident_title) ?>
         </a>
         <div>
