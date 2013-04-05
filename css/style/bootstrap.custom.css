@@ -401,6 +401,21 @@ body{
     background-position: bottom!important;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    font-size: 14px;
+
+}
 
 
+.report-map .map-holder{
+    width: 380px;
+}
+
+.report-title{
+    font-size: 15px;
+    margin: 0px 0px 8px 0px;
+    display: block;
+}
+
+#rb_list-view {
+padding: 0;
 }
