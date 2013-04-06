@@ -84,7 +84,7 @@
 
                                     </ul>
                                     <?php echo form::open("search", array('method' => 'get', 'id' => 'search', 'class' => 'navbar-search pull-left')) ?>
-                                    <input type="text" class="search-query" placeholder="<?php echo Kohana::lang('ui_main.search') ?>">
+                                    <input type="text" class="search-query" name="k" placeholder="<?php echo Kohana::lang('ui_main.search') ?>">
                                     </form>
 
                                 </div>
