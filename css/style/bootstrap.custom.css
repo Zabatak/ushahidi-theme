@@ -419,3 +419,7 @@ body{
 #rb_list-view {
 padding: 0;
 }
+
+ul.filter-list li a {
+    overflow: hidden;
+}
