@@ -5,7 +5,7 @@
 		<div>
 			<h3><?php echo Kohana::lang('ui_main.alerts_get') ?></h3>
 			
-			<?php if(1 or $show_mobile == TRUE): ?>
+			<?php if($show_mobile == TRUE): ?>
 			<!-- Mobile Alert -->
 			<div class="well">
 				<fieldset>
